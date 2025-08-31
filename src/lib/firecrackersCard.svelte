@@ -50,7 +50,6 @@
 	let crackersList = $state(crackersList1);
 
 	function changeValue(action, id) {
-		console.log(action, id);
 		if (action == 'plus') {
 			crackersList[id].quantity = crackersList[id].quantity + 1;
 		} else {
