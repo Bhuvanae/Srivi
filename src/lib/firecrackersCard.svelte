@@ -12,14 +12,14 @@
 		title = 'Single Sound Crackers',
 		edit = 'false',
 		crackersList1 = [
-			{
-				name: "3 1/2 ' Lakshmi",
-				item: "10 No's",
-				mrPrice: 110,
-				price: 15,
-				image: saraswathi,
-				quantity: 0
-			},
+			// {
+			// 	name: "3 1/2 ' Lakshmi",
+			// 	item: "10 No's",
+			// 	mrPrice: 110,
+			// 	price: 15,
+			// 	image: saraswathi,
+			// 	quantity: 0
+			// },
 			{
 				name: '2 3/4 Kuruvi',
 				item: "10 No's",
