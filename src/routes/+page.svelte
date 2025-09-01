@@ -8,7 +8,7 @@
 	});
 </script>
 
-<section class="h-[500px] w-full">
+<section class="flex h-[100vh] w-full items-center justify-center">
 	<div class="flex h-full w-full gap-2">
 		<p>loading</p>
 		<LoadingAnimation color="bg-white" />
