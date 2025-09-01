@@ -21,7 +21,7 @@
 
 	import main from '$lib/assets/mainimage.webp';
 	import main1 from '$lib/assets/homePage.webp';
-	import main2 from '$lib/assets/Offer.webp';
+	import main2 from '$lib/assets/offer.webp';
 	import { fetchApi } from '$lib/fetchApi';
 	import CategoriesCard from '$lib/categoriesCard.svelte';
 	import { goto } from '$app/navigation';
