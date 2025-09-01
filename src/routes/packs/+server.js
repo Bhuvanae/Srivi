@@ -11,7 +11,6 @@ export async function POST({ request, cookies }) {
     let details = data.details
 
     try {
-        // console.log(details, "details of the api")
         if (data.name == "createPack") {
             console.log('whith in the limit')
             let imageResponse = ""
@@ -31,7 +30,6 @@ export async function POST({ request, cookies }) {
                 });
 
                 imageResponse = await response.json();
-                // console.log('Image URL:', imageResponse.data.url);
             }
 
             // 
