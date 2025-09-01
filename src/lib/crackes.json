@@ -1,0 +1,1464 @@
+{
+	"ONE_SOUND_CRACKERS": [
+		{
+			"name": "6\" Lakshmi(Super Man)",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "5\" Lakshmi",
+			"actual_price": 190,
+			"discount": 38,
+			"price": 152,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "4\" Super Deluxe Hanuman",
+			"actual_price": 170,
+			"discount": 34,
+			"price": 136,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "4\" Gold Lakshmi",
+			"actual_price": 150,
+			"discount": 30,
+			"price": 120,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "4\" Deluxe Lakshmi Crackers(Lion)",
+			"actual_price": 150,
+			"discount": 30,
+			"price": 120,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "4\" Lakshmi Crackers",
+			"actual_price": 100,
+			"discount": 20,
+			"price": 80,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "3½\" Lakshmi Crackers",
+			"actual_price": 60,
+			"discount": 12,
+			"price": 48,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "3½\" Ben 10 Crackers",
+			"actual_price": 60,
+			"discount": 12,
+			"price": 48,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "2 3/4\" kuruvi crackers",
+			"actual_price": 40,
+			"discount": 8,
+			"price": 32,
+			"quantity": "1 Pkt"
+		}
+	],
+	"GIANT_CRACKERS": [
+		{
+			"name": "28 Giant",
+			"actual_price": 100,
+			"discount": 20,
+			"price": 80,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "50 Deluxe",
+			"actual_price": 600,
+			"discount": 120,
+			"price": 480,
+			"quantity": "1 Pkt"
+		}
+	],
+	"BIJILI_CRACKERS": [
+		{
+			"name": "Gold Bijili (50 Pcs)",
+			"actual_price": 100,
+			"discount": 20,
+			"price": 80,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "Red Bijili (100Pcs)",
+			"actual_price": 200,
+			"discount": 40,
+			"price": 160,
+			"quantity": "1 Pkt"
+		},
+		{
+			"name": "Red Bijili (50Pcs)",
+			"actual_price": 125,
+			"discount": 25,
+			"price": 100,
+			"quantity": "1 Pkt"
+		}
+	],
+	"FLOWER_POTS": [
+		{
+			"name": "Flower Pots Small",
+			"actual_price": null,
+			"discount": null,
+			"price": null,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Flower Pots Big",
+			"actual_price": 300,
+			"discount": 60,
+			"price": 240,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Flower Pots Special",
+			"actual_price": 425,
+			"discount": 85,
+			"price": 340,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Flower Pots Asoka",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Colour Kotti",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Colour Kotti Deluxe",
+			"actual_price": 1800,
+			"discount": 360,
+			"price": 1440,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Tri Colour (5 Pcs)",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Shin Chan Tri Colour (3 Pcs)",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		}
+	],
+	"GROUND_CHAKKAR": [
+		{
+			"name": "Chakkar Big (10 Pcs)",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Chakkar Asoka",
+			"actual_price": 225,
+			"discount": 45,
+			"price": 180,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Chakkar Special",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Chakkar Deluxe",
+			"actual_price": 650,
+			"discount": 130,
+			"price": 520,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Spinner Special",
+			"actual_price": 600,
+			"discount": 120,
+			"price": 480,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Spinner Deluxe",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Wire Chakkar",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Box"
+		}
+	],
+	"BOMB": [
+		{
+			"name": "Atom Bomb Big",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Hydro Bomb",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "King of King",
+			"actual_price": 425,
+			"discount": 85,
+			"price": 340,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Digital Bomb",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Spider Bomb",
+			"actual_price": 1150,
+			"discount": 230,
+			"price": 920,
+			"quantity": "1 Box"
+		}
+	],
+	"PAPER_BOMB": [
+		{
+			"name": "¼ Kg Paper Bomb",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "½ Kg Paper Bomb",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "1 Kg Paper Bomb",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Avatar Super Deluxe (10 Pcs)",
+			"actual_price": 1100,
+			"discount": 220,
+			"price": 880,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Money Bank",
+			"actual_price": 850,
+			"discount": 170,
+			"price": 680,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Magic Show",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Box"
+		}
+	],
+	"TWINKLING_STAR": [
+		{
+			"name": "1½\" Twinkling Star",
+			"actual_price": 140,
+			"discount": 28,
+			"price": 112,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "4\" Twinkling Star",
+			"actual_price": 300,
+			"discount": 60,
+			"price": 240,
+			"quantity": "1 Box"
+		}
+	],
+	"PENCIL_CANDLE": [
+		{
+			"name": "Amazing Pencil",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Sea Laser-Mix",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Colour Candle-Mix",
+			"actual_price": 850,
+			"discount": 170,
+			"price": 680,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Avengers Candle-Mix",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Colour Rain-Mix",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Chikoo-Bunty",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Sivakasi Special",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		}
+	],
+	"STONE": [
+		{
+			"name": "Kit Kat",
+			"actual_price": 200,
+			"discount": 40,
+			"price": 160,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Magic Pops",
+			"actual_price": 50,
+			"discount": 10,
+			"price": 40,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Gee Boom Paa",
+			"actual_price": 50,
+			"discount": 10,
+			"price": 40,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Electric Stone",
+			"actual_price": 60,
+			"discount": 12,
+			"price": 48,
+			"quantity": "1 Box"
+		}
+	],
+	"ROCKET": [
+		{
+			"name": "Baby Rocket",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Lunik Express",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "2 Sound Rocket",
+			"actual_price": 550,
+			"discount": 110,
+			"price": 440,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Musical Rocket",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		}
+	],
+	"WALA_GARLANDS": [
+		{
+			"name": "100 Wala",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "1000 Wala",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "2000 Wala",
+			"actual_price": 2000,
+			"discount": 400,
+			"price": 1600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "5000 Wala",
+			"actual_price": 5000,
+			"discount": 1000,
+			"price": 4000,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10000 Wala",
+			"actual_price": 10000,
+			"discount": 2000,
+			"price": 8000,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "1000 Wala Spl",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "90 Watts (Digital Wala)+B139",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		}
+	],
+	"MULTI_COLOUR_SHOTS": [
+		{
+			"name": "7 Shot (5 Pcs)",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "7 Shot colour (5 Pcs)",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "12 Shot Raider",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Laka Laka",
+			"actual_price": 350,
+			"discount": 170,
+			"price": 280,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "25 Shot Raider",
+			"actual_price": 1050,
+			"discount": 210,
+			"price": 840,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "50 Shot Raider",
+			"actual_price": 2100,
+			"discount": 420,
+			"price": 1680,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Shot Multi Colour (UV Box)",
+			"actual_price": 2000,
+			"discount": 400,
+			"price": 1600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "60 Shot Multi Colour (UV Box)",
+			"actual_price": 4000,
+			"discount": 800,
+			"price": 3200,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "120 Shot Multi Colour (UV Box)",
+			"actual_price": 8000,
+			"discount": 1600,
+			"price": 6400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "240 Shot Multi Colour (UV Box)",
+			"actual_price": 15000,
+			"discount": 3000,
+			"price": 12000,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Celebaration Night (10x10) Set Out",
+			"actual_price": 13000,
+			"discount": 2600,
+			"price": 10400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Peacock Dance (10x10) Set Out",
+			"actual_price": 14000,
+			"discount": 2800,
+			"price": 11200,
+			"quantity": "1 Box"
+		}
+	],
+	"SINGLE_SHOT": [
+		{
+			"name": "1\" Chotta Fancy (All Colours)",
+			"actual_price": 200,
+			"discount": 40,
+			"price": 160,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "2\" Colour Fancy (All Colours)",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "2\" Colour Fancy (3 Pcs)",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "2\" Colour Fancy (Three Step)",
+			"actual_price": 1150,
+			"discount": 230,
+			"price": 920,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "3\" Colour Fancy (All Colours)",
+			"actual_price": null,
+			"discount": null,
+			"price": null,
+			"quantity": "1 Pcs"
+		}
+	],
+	"FANCY_MULTI_COLOUR": [
+		{
+			"name": "Dead Pool",
+			"actual_price": 1400,
+			"discount": 280,
+			"price": 1120,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Mufasa",
+			"actual_price": 1400,
+			"discount": 280,
+			"price": 1120,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Tarzan",
+			"actual_price": 1400,
+			"discount": 280,
+			"price": 1120,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Jack",
+			"actual_price": 1400,
+			"discount": 280,
+			"price": 1120,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Aladdin",
+			"actual_price": 1400,
+			"discount": 280,
+			"price": 1120,
+			"quantity": "1 Pcs"
+		}
+	],
+	"FANCY_DOUBLE_BALL": [
+		{
+			"name": "Spicejet 2 in 1",
+			"actual_price": 2100,
+			"discount": 420,
+			"price": 1680,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Nestle",
+			"actual_price": 2100,
+			"discount": 420,
+			"price": 1680,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Action Jackion",
+			"actual_price": 2100,
+			"discount": 420,
+			"price": 1680,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Tango",
+			"actual_price": 2100,
+			"discount": 420,
+			"price": 1680,
+			"quantity": "1 Pcs"
+		}
+	],
+	"FANCY": [
+		{
+			"name": "Octopus",
+			"actual_price": 2750,
+			"discount": 550,
+			"price": 2200,
+			"quantity": "1 Pcs"
+		}
+	],
+	"FANCY_FOUNTAIN": [
+		{
+			"name": "Googly Mix",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Paris Tower",
+			"actual_price": 525,
+			"discount": 105,
+			"price": 420,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Apple Mix",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "X-max Mix",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Kulfi Series",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Star Drum",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Sky Shot (5 in 1)",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Siren Mini",
+			"actual_price": 600,
+			"discount": 120,
+			"price": 480,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Siren Mega",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Pentagon",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Holy Night (5 Pcs)",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "White house",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Lotus Wheel (4x4)",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Helicopter",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Drone",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Photo Flash",
+			"actual_price": 300,
+			"discount": 60,
+			"price": 240,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Wonders-3",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Choconz (2 Pcs)",
+			"actual_price": 850,
+			"discount": 170,
+			"price": 680,
+			"quantity": "1 Box"
+		}
+	],
+	"SMOKE": [
+		{
+			"name": "Colour Smoke (5Pcs)",
+			"actual_price": 1100,
+			"discount": 220,
+			"price": 880,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Colour Smoke (3Pcs)",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Happy Holi - Mix",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Colour Smoke Peacock",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Smoky Stick",
+			"actual_price": 350,
+			"discount": 70,
+			"price": 280,
+			"quantity": "1 Box"
+		}
+	],
+	"TIN_FOUNTAIN": [
+		{
+			"name": "4\" Mazza Tin",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "4\" Pinapple Tin",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "4\" Grapes Tin",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "4\" Pomegranate Tin",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "6\" Spirite Tin",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "6\" Frooty Tin",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "8\" Jaiho Tin",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "8\" Mojito Tin",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		}
+	],
+	"ASARAFI": [
+		{
+			"name": "Golden Flower",
+			"actual_price": 300,
+			"discount": 60,
+			"price": 240,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Asarafi Big",
+			"actual_price": 225,
+			"discount": 45,
+			"price": 180,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Tim Tim",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		}
+	],
+	"SPARKLERS": [
+		{
+			"name": "7 Cm Electric Sparklers",
+			"actual_price": 45,
+			"discount": 9,
+			"price": 36,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "7 Cm Colour Sparklers",
+			"actual_price": 50,
+			"discount": 10,
+			"price": 40,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "7 Cm Green Sparklers",
+			"actual_price": 50,
+			"discount": 10,
+			"price": 40,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "7 Cm Red Sparklers",
+			"actual_price": 50,
+			"discount": 10,
+			"price": 40,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10 Cm Electric Sparklers",
+			"actual_price": 75,
+			"discount": 15,
+			"price": 60,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10 Cm Colour Sparklers",
+			"actual_price": 80,
+			"discount": 16,
+			"price": 64,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10 Cm Green Sparklers",
+			"actual_price": 100,
+			"discount": 20,
+			"price": 80,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10 Cm Red Sparklers",
+			"actual_price": 100,
+			"discount": 20,
+			"price": 80,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10 Cm Signal Red Sparklers",
+			"actual_price": 130,
+			"discount": 26,
+			"price": 104,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10 Cm Signal 4 in 1 Sparklers",
+			"actual_price": 140,
+			"discount": 28,
+			"price": 112,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10cm Signal Star Plus",
+			"actual_price": 140,
+			"discount": 28,
+			"price": 112,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10cm Signal Japans",
+			"actual_price": 140,
+			"discount": 28,
+			"price": 112,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10cm Signal Ultra Green",
+			"actual_price": 140,
+			"discount": 28,
+			"price": 112,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10cm Signal Pinky",
+			"actual_price": 150,
+			"discount": 30,
+			"price": 120,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "12 Cm Electric Sparklers",
+			"actual_price": 110,
+			"discount": 22,
+			"price": 88,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "12 Cm Colour Sparklers",
+			"actual_price": 120,
+			"discount": 24,
+			"price": 96,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "12 Cm Green Sparklers",
+			"actual_price": 125,
+			"discount": 25,
+			"price": 100,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "12 Cm Red Sparklers",
+			"actual_price": 150,
+			"discount": 30,
+			"price": 120,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "15 Cm Electric Sparklers",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "15 Cm Colour Sparklers",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "15 Cm Green Sparklers",
+			"actual_price": 200,
+			"discount": 40,
+			"price": 160,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "15 Cm Red Sparklers",
+			"actual_price": 210,
+			"discount": 42,
+			"price": 168,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "15 Cm Royal Electric",
+			"actual_price": 225,
+			"discount": 45,
+			"price": 180,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "15 Cm Royal Crackling",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "15 Cm Royal Yellow",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "15 Cm Royal Red",
+			"actual_price": 275,
+			"discount": 55,
+			"price": 220,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "30 Cm Electric Sparklers",
+			"actual_price": 220,
+			"discount": 44,
+			"price": 176,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Colour Sparklers",
+			"actual_price": 220,
+			"discount": 44,
+			"price": 176,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Green Sparklers",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Red Sparklers",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Gold Electric (2 BOX)",
+			"actual_price": 175,
+			"discount": 35,
+			"price": 140,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Gold Crackling (2 BOX)",
+			"actual_price": 200,
+			"discount": 40,
+			"price": 160,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Gold Electric",
+			"actual_price": 225,
+			"discount": 45,
+			"price": 180,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Gold Crackling",
+			"actual_price": 225,
+			"discount": 45,
+			"price": 180,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Gold Yellow",
+			"actual_price": 200,
+			"discount": 40,
+			"price": 160,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30 Cm Gold V.I.P. 5 in 1",
+			"actual_price": 250,
+			"discount": 50,
+			"price": 200,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "50 Cm Electric Sparklers",
+			"actual_price": 750,
+			"discount": 150,
+			"price": 600,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "50 Cm Crackling Sparklers",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "50 Cm Green Sparklers",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Tube"
+		},
+		{
+			"name": "Lovely Sparklers",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "10cm Full HD Colour Collections(PKT)",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "30cm Dancing Rose Electrical",
+			"actual_price": 1100,
+			"discount": 220,
+			"price": 880,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "30cm Dancing Rose Red and Yellow",
+			"actual_price": 1200,
+			"discount": 240,
+			"price": 960,
+			"quantity": "1 Pcs"
+		}
+	],
+	"KIDS_ITEMS": [
+		{
+			"name": "Serpent Small",
+			"actual_price": null,
+			"discount": null,
+			"price": null,
+			"quantity": null
+		},
+		{
+			"name": "Serpent Big",
+			"actual_price": null,
+			"discount": null,
+			"price": null,
+			"quantity": null
+		},
+		{
+			"name": "Roll Cap",
+			"actual_price": null,
+			"discount": null,
+			"price": null,
+			"quantity": null
+		}
+	],
+	"PEACOCK": [
+		{
+			"name": "Magical Peacock",
+			"actual_price": 850,
+			"discount": 170,
+			"price": 680,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Belly Dance Peacock",
+			"actual_price": 650,
+			"discount": 150,
+			"price": 500,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Dancing Peacock",
+			"actual_price": 850,
+			"discount": 170,
+			"price": 680,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Dragon Peacock",
+			"actual_price": 850,
+			"discount": 170,
+			"price": 680,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Diamond Peacock",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Royal Peacock",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Colour Peacock (5 Face)",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		}
+	],
+	"KIDS_SPECIAL_ITEMS": [
+		{
+			"name": "Hello Kitty",
+			"actual_price": 1050,
+			"discount": 210,
+			"price": 840,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Pistol Gun",
+			"actual_price": 875,
+			"discount": 175,
+			"price": 700,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Top Gun +27",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Warrior Sword",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Sound Marriage (3Pcs)",
+			"actual_price": 825,
+			"discount": 165,
+			"price": 660,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Mottu Pattlu",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Old is Gold (25pcs)",
+			"actual_price": 900,
+			"discount": 180,
+			"price": 720,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Black Money",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Emu Egg",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Planet Wheeling Show",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Micky Stick",
+			"actual_price": 1400,
+			"discount": 280,
+			"price": 1120,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Selfi Stick",
+			"actual_price": 1100,
+			"discount": 120,
+			"price": 980,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Bat & Ball",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Butterfly",
+			"actual_price": 400,
+			"discount": 80,
+			"price": 320,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Touch & Touch",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Bambaram",
+			"actual_price": 500,
+			"discount": 100,
+			"price": 400,
+			"quantity": "1 Box"
+		},
+		{
+			"name": "Moving Car",
+			"actual_price": 800,
+			"discount": 160,
+			"price": 640,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Kittar",
+			"actual_price": 1250,
+			"discount": 250,
+			"price": 1000,
+			"quantity": "1 Pcs"
+		}
+	],
+	"DOUBLE_ATTRACTION_FOUNTAIN": [
+		{
+			"name": "Dolu & Bolu",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Rain & Shin",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Timmy & Tommy",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Jubbly & Bubbly",
+			"actual_price": 1000,
+			"discount": 200,
+			"price": 800,
+			"quantity": "1 Pcs"
+		},
+		{
+			"name": "Violet Matrix (2 Shot in Sky)",
+			"actual_price": 2000,
+			"discount": 400,
+			"price": 1600,
+			"quantity": "1 Pcs"
+		}
+	]
+}
+
+
+
