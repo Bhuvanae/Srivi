@@ -244,7 +244,7 @@
   </div>
   </div>
 `;
-		sendOrderToWhatsApp(id);
+		// sendOrderToWhatsApp(id);
 
 		generateAndDownloadPDF(tableHTML);
 	}
