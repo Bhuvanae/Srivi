@@ -7,7 +7,7 @@ export function storeData() {
     let showCartItems = $state(false);
     let topPosition = $state(0)
     let cartQuantity = $state(0)
-    let minimumCartValue = $state(2500)
+    let minimumCartValue = $state(2499)
     let totalTop = $state(0)
     let toast = { show: false, title: "Successfully created", duration: 2000, action: "success" }
 

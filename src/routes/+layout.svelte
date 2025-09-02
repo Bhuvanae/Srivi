@@ -123,7 +123,7 @@
 	let scrollDetails = $state([
 		{
 			icon: '💥',
-			title: 'Welcome to Agni Siragu Pattasugal',
+			title: 'Welcome to Srivi Crackers',
 			detail: 'Your one-stop shop for premium firecrackers!'
 		},
 		{

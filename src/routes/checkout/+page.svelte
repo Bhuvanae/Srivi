@@ -195,7 +195,7 @@
 	
 
   <table class="w-full border-collapse table">
-		<thead class="bg-[#a91b0c] text-white">
+		<thead class="bg-secondary-450 text-white">
 			<tr class="no_break">
 				<th class="border border-[#ddd] px-2 py-2.5 text-center table-cell">S.No</th>
 				<th class="border border-[#ddd] px-2 py-2.5 text-center table-cell">Item</th>
@@ -310,7 +310,6 @@
 				cartItems.map((item) => {
 					queryData.push({ itemid: item.id, nitems: item.cartQuantity });
 				});
-
 				let createOrder = await fetchApi('/orders', 'POST', 'createOrder', {
 					name: inputValues.firstName || '' + inputValues.lastName || '',
 					mobile: inputValues.mobile,
@@ -324,7 +323,6 @@
 				});
 				if (createOrder.resStatus == 200) {
 					downloadPDF(createOrder.data.create_orders);
-
 					storeNew.toast = {
 						show: true,
 						title: 'Order Created Successfully',
@@ -488,23 +486,6 @@
 			.catch((err) => console.error('Telegram error:', err));
 	}
 
-	// function orderCrackers() {
-	// 	if (
-	// 		(inputValues.firstName || inputValues.lastName) &&
-	// 		inputValues.email &&
-	// 		/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputValues.email) &&
-	// 		inputValues.mobile &&
-	// 		inputValues.type &&
-	// 		inputValues.district &&
-	// 		inputValues.street &&
-	// 		inputValues.pincode &&
-	// 		inputValues.country
-	// 	) {
-	// 		downloadPDF();
-	// 	} else {
-	// 		validatePage = true;
-	// 	}
-	// }
 	let couponDetail = $state({ apply: false, error: undefined });
 	async function getCouponDetails(value) {
 		couponDetail = { apply: false, error: undefined, loading: 'load', min_amount: null };

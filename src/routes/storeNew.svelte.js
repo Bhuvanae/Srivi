@@ -6,7 +6,7 @@ export function createStore() {
     let admin = $derived(browser ? getCookie('id') : '');
     let showCartItems = $state(false);
     let topPosition = $state(0);
-    let minimumCartValue = $state(2500);
+    let minimumCartValue = $state(2499);
     let totalTop = $state(0);
     let toast = $state({
         show: false,

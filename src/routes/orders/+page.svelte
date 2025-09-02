@@ -109,9 +109,10 @@
 						name,
 						amount,
 						orderId: details.id,
-						upiId: 7987654643,
+						upiId: 'mahishiyam007@oksbi',
 						trackingNumber: 0,
-						phoneNumber
+						phoneNumber,
+						upiMobileNumber: storeNew.cAddress.mobile1
 					});
 					ordersDataforFilter = ordersData;
 					storeNew.toast = {
@@ -162,26 +163,28 @@
 
 	function sendWhatsAppMessage(
 		stage,
-		{ name, amount, orderId, upiId, trackingNumber, phoneNumber }
+		{ name, amount, orderId, upiId, trackingNumber, phoneNumber, upiMobileNumber }
 	) {
 		let message = '';
-		let channelLink = 'https://whatsapp.com/channel/0029Vb6c39P7dmejAqhTEZ39';
+		// let channelLink = 'https://whatsapp.com/channel/0029Vb6c39P7dmejAqhTEZ39';
+
+		// \n\n Join our WhatsApp Channel for updates : ${channelLink}
 
 		switch (stage) {
 			case 'Confirmed':
-				message = `Dear ${name},\nWe have received your order (ID: ${orderId}).\nPlease complete your payment of ₹${amount} via UPI to ${upiId} to proceed.\n You can pay this account number 74859665646546 and IFSC code is BKID 6546546654. \n Thank you for choosing us! \n\n Join our WhatsApp Channel for updates : ${channelLink}`;
+				message = `Dear ${name},\nWe have received your order (ID: ${orderId}).\nPlease complete your payment of ₹${amount} via UPI to ${upiId} to proceed.\n Alternatively, you can pay using Google Pay, PhonePe, or Paytm to the mobile number ${upiMobileNumber}.\n\n For any queries, feel free to reach out to us.  \n Thank you for choosing us! `;
 				break;
 
 			case 'Payment':
-				message = `Dear ${name},\nWe have received your payment of ₹${amount}.\nYour order (ID: ${orderId}) is being processed and will be dispatched soon.\nThank you for your prompt payment! \n\n Join our WhatsApp Channel for updates : ${channelLink}`;
+				message = `Dear ${name},\nWe have received your payment of ₹${amount}.\nYour order (ID: ${orderId}) is being processed and will be dispatched soon.\n\n For any queries, feel free to reach out to us.  \nThank you for your prompt payment! `;
 				break;
 
 			case 'Dispatched':
-				message = `Dear ${name},\nYour order (ID: ${orderId}) has been dispatched via courier.\nTracking Number: ${trackingNumber}.\nThank you for shopping with us! \n\n Join our WhatsApp Channel for updates : ${channelLink}`;
+				message = `Dear ${name},\nYour order (ID: ${orderId}) has been dispatched via courier.\nTracking Number: ${trackingNumber}.\n\n For any queries, feel free to reach out to us. .\nThank you for shopping with us! `;
 				break;
 
 			case 'Delivered':
-				message = `Dear ${name},\nYour order (ID: ${orderId}) has been successfully delivered.\nWe hope you enjoy your crackers!\nThank you for trusting us! \n\n Join our WhatsApp Channel for updates : ${channelLink}`;
+				message = `Dear ${name},\nYour order (ID: ${orderId}) has been successfully delivered.\nWe hope you enjoy your crackers!\n\n For any queries, feel free to reach out to us.  \nThank you for trusting us! `;
 				break;
 
 			default:

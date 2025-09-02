@@ -308,6 +308,32 @@
 			</div>
 		</div>
 	</div>
+	<div class="flex h-fit w-full items-center justify-center">
+		<section
+			class="bg-primary-350 mx-auto flex h-[300px] w-1/2 max-w-md min-w-1/2 flex-col items-center justify-center rounded-lg p-6 shadow-md {intersection.container2
+				? ' translate-0 opacity-100'
+				: '-translate-x-4 opacity-0'} transistion-all delay-300 duration-800"
+		>
+			<h2 class="text-secondary-100 py-4 text-center text-4xl font-bold">Bank Details</h2>
+			<!-- <p class="text-lg font-medium text-white">
+				<span class="font-semibold">upi Id:</span> AGNI SIRAGU PATTASUGAL
+			</p>
+			<p><span class="font-semibold">Bank Name:</span> State Bank of India</p>
+			<p class="text-lg font-medium text-white">
+				<span class="font-semibold">Account Number:</span> 0720073000000434
+			</p>
+			<p class="text-lg font-medium text-white">
+				<span class="font-semibold">IFSC Code:</span> SIBL0000720
+			</p>
+			<p class="text-lg font-medium text-white">
+				<span class="font-semibold">UPI Number:</span> 7305962902
+			</p> -->
+
+			<!-- <p><span class="font-semibold">UPI ID:</span> phoenix@upi</p> -->
+			<li class="text-lg font-medium text-white"><strong>UPI ID:</strong> mahishiyam007@oksbi</li>
+			<li class="text-lg font-medium text-white"><strong>UPI Number : </strong>  +91 90259 46872</li>
+		</section>
+	</div>
 	<div
 		id="container3"
 		class="flex h-fit min-h-[350px] w-full grid-cols-2 justify-center gap-20 rounded-lg bg-gray-200 px-8 py-4 {intersection.container3
@@ -405,8 +431,9 @@
 			: 'translate-y-10 opacity-0'} transistion-all delay-300 duration-800"
 	>
 		<!-- svelte-ignore a11y_missing_attribute -->
+
 		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3780.5542603151625!2d77.899502!3d9.574972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzQnMjkuOSJOIDc3wrA1Myc1OC4yIkU!5e1!3m2!1sen!2sin!4v1752472015867!5m2!1sen!2sin"
+			src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1756838132089!5m2!1sen!2sin!6m8!1m7!1sWz3T4iRmZsfFr3jo8FVUAA!2m2!1d9.38386278493118!2d77.77954840378236!3f260.5338755852104!4f-0.08559877376583813!5f3.325193203789971"
 			width="100%"
 			height="100%"
 			style="border:0;"
