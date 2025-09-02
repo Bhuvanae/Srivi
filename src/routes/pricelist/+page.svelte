@@ -145,15 +145,15 @@
 			<div class="logo-wrapper">
 				<img src="/logo.png" alt="Logo" width="70" height="70" />
 			</div>
-			<h1 class="text-[24px] -mt-5 leading-none h-fit font-bold">Agni Siragu Pattasugal</h1>
+			<h1 class="text-[24px] -mt-5 leading-none h-fit font-bold">${storeNew.cAddress.address1.toUpperCase()}</h1>
 		</div>
 
 		<div class="flex h-fit flex-col gap-1 text-sm font-semibold">
-			<p>Agni Siragu Pattasugal</p>
-			<p>Veerachelliahpuram</p>
-			<p>Virudhunagar to Sivakasi road</p>
-			<p>Sivakasi, Virudhunagar (dt).</p>
-			<p>+91 7305962902 , +91 7305962906</p>
+			<p>${storeNew.cAddress.address1}</p>
+			<p>${storeNew.cAddress.address2}</p>
+			<p>${storeNew.cAddress.address3}</p>
+			<p>${storeNew.cAddress.address4},${storeNew.cAddress.address5}</p>
+			<p>${storeNew.cAddress.mobile1}, ${storeNew.cAddress.mobile2}</p>
 		</div>
 	</div>
 	
@@ -796,24 +796,33 @@ ${
 			</div>
 		{/if}
 
-		<button
-			in:scale={{ duration: 1000 }}
-			onclick={() => downloadPDF(pricelist)}
-			class="bg-primary-400 mt-4 cursor-pointer rounded px-6 py-2 text-white transition-all duration-500 hover:scale-105"
-		>
-			{#if loading == 'updateStock'}
-				<div class="flex h-full w-full gap-2">
-					<p>loading</p>
-					<LoadingAnimation color="bg-white" />
-				</div>
-			{:else}
-				{pricelist == 'list'
-					? 'Download Price List (PDF)'
-					: pricelist == 'stock'
-						? 'Update Stocks'
-						: 'Print'}
-			{/if}
-		</button>
+		{#if pricelist == 'list'}<a href="/pricelist.pdf" download
+				><button
+					in:scale={{ duration: 1000 }}
+					class="bg-primary-400 mt-4 cursor-pointer rounded px-6 py-2 text-white transition-all duration-500 hover:scale-105"
+				>
+					Download Price List (PDF)
+				</button>
+			</a>{:else}
+			<button
+				in:scale={{ duration: 1000 }}
+				onclick={() => downloadPDF(pricelist)}
+				class="bg-primary-400 mt-4 cursor-pointer rounded px-6 py-2 text-white transition-all duration-500 hover:scale-105"
+			>
+				{#if loading == 'updateStock'}
+					<div class="flex h-full w-full gap-2">
+						<p>loading</p>
+						<LoadingAnimation color="bg-white" />
+					</div>
+				{:else}
+					{pricelist == 'list'
+						? 'Download Price List (PDF)'
+						: pricelist == 'stock'
+							? 'Update Stocks'
+							: 'Print'}
+				{/if}
+			</button>
+		{/if}
 	{:else}
 		<div
 			id="loadingContainer"

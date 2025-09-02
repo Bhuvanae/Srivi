@@ -494,15 +494,15 @@
 			<div class="logo-wrapper">
 				<img src="/logo.png" alt="Logo" width="70" height="70" />
 			</div>
-			<h1 class="text-[24px] -mt-5 leading-none h-fit font-bold">Agni Siragu Pattasugal</h1>
+			<h1 class="text-[24px] -mt-5 leading-none h-fit font-bold">${storeNew.cAddress.address1}</h1>
 		</div>
 
 		<div class="flex h-fit flex-col gap-1 text-sm font-semibold">
-			<p>Agni Siragu Pattasugal</p>
-			<p>Veerachelliahpuram</p>
-			<p>Virudhunagar to Sivakasi road</p>
-			<p>Sivakasi, Virudhunagar (dt).</p>
-			<p>+91 7305962902 , +91 7305962906</p>
+			<p>${storeNew.cAddress.address1}</p>
+			<p>${storeNew.cAddress.address2}</p>
+			<p>${storeNew.cAddress.address3}</p>
+			<p>${storeNew.cAddress.address4},${storeNew.cAddress.address5}</p>
+			<p>${storeNew.cAddress.mobile1}, ${storeNew.cAddress.mobile2}</p>
 		</div>
 	</div>
 	<table class="w-full border-collapse">

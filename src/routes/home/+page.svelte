@@ -14,10 +14,11 @@
 	import { linear } from 'svelte/easing';
 	import { onDestroy } from 'svelte';
 	import star from '$lib/assets/star.png';
-	import bg1 from '$lib/assets/bg1.jpg';
-	import bg2 from '$lib/assets/bg2.jpg';
-	import bg3 from '$lib/assets/bg3.jpg';
+	import bg1 from '$lib/assets/bg1.webp';
+	import bg2 from '$lib/assets/bg2.webp';
+	import bg3 from '$lib/assets/bg3.webp';
 	import bg4 from '$lib/assets/bg4.jpg';
+	import bg5 from '$lib/assets/bg5.webp';
 
 	import main from '$lib/assets/mainimage.webp';
 	import main1 from '$lib/assets/homePage.webp';
@@ -31,7 +32,7 @@
 
 	let initialImage = false;
 
-	let bannerImages = [bg4, bg1, bg2, bg3];
+	let bannerImages = [bg4, bg1, bg2, bg3, bg5];
 
 	let currentIndex = $state(0);
 
@@ -367,7 +368,7 @@
 				? ' scale-100 opacity-100'
 				: ' scale-150 opacity-0'} transition-all delay-300 duration-1000 max-md:hidden"
 		>
-			<div class="h-[600px] max-h-[600px] min-h-[600px] w-full overflow-hidden rounded-xl">
+			<div class="h-[600px] max-h-[600px] min-h-[600px] w-full overflow-hidden rounded-xl ">
 				<AssetImage imageSrc={main2} rounded="rounded-xl" object="object-contain" />
 			</div>
 		</div>
@@ -401,10 +402,12 @@
 						? ' translate-x-0 opacity-100'
 						: ' translate-x-4 opacity-0'} transistion-all delay-[1500ms] duration-700"
 				>
-					Agni Siragu Pattasugal is a proud Sivakasi-based firecracker supplier dedicated to
-					bringing joy and spark to your celebrations. With over 10+ years of experience, we offer a
-					wide variety of high-quality, government-approved crackers including sparklers, atom
-					bombs, sky shots, flower pots, rockets, and fancy items.
+					Srivi Crackers is a vibrant new firecracker brand born out of friendship and passion in
+					Sivakasi – the heart of India’s fireworks industry. Founded by a group of friends with a
+					shared dream, Srivi Crackers brings you the latest and most exciting range of crackers
+					designed to make every celebration brighter and more memorable. From dazzling sky shots to
+					sparkling fountains, rockets, and innovative fancy items, our collection is fresh, safe,
+					and crafted to deliver joy with every spark. 
 				</p>
 				<p
 					class="text-secondary-350 text-sm font-medium max-md:text-center md:text-xl md:leading-8 {intersection.image1
