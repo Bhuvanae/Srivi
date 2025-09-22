@@ -78,6 +78,7 @@
 			filterPackData = getData.data.list;
 			crackerList = getData.data.crackers;
 			filterCrackerList = getData.data.crackers;
+			console.log($state.snapshot(packData));
 
 			const favIds = new Set(store.favItems.map((product) => product.id));
 

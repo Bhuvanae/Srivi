@@ -812,7 +812,7 @@
 					{#each typeList as list}
 						{#if list.result.type !== 'PACK'}
 							<button
-								class="flex w-full cursor-pointer hover:scale-105 transition-all duration-300 justify-between {selectedFilter ==
+								class="flex w-full cursor-pointer justify-between transition-all duration-300 hover:scale-105 {selectedFilter ==
 								list.result.type
 									? 'text-primary-350'
 									: ''}"

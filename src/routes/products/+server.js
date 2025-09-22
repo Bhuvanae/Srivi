@@ -72,7 +72,7 @@ export async function POST({ request, cookies }) {
                     id: details.id,
                     name: details.name,
                     description: details.description,
-                    image: imageResponse.data ? imageResponse.data.url : null,
+                    image: imageResponse.data ? imageResponse.data.url : details.image !== "" ? details.image : null,
                     type: details.type,
                     price: Math.trunc(details.actualprice * ((100 - details.discount) / 100)),
                     actualprice: details.actualprice,
