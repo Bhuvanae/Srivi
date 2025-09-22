@@ -78,7 +78,6 @@
 			filterPackData = getData.data.list;
 			crackerList = getData.data.crackers;
 			filterCrackerList = getData.data.crackers;
-			console.log($state.snapshot(packData));
 
 			const favIds = new Set(store.favItems.map((product) => product.id));
 
@@ -265,6 +264,11 @@
 				detail.action = 'update';
 				detail.items = detail.extraData.items;
 				crackerDetail = detail;
+				if (detail.items.length !== 0) {
+					createType = 'Pack';
+				} else {
+					createType = 'Giftbox';
+				}
 			}
 		}
 	}
@@ -670,7 +674,7 @@
 						{#if list.id}
 							<CrackerCard
 								index={i}
-								image={list.image || packNull}
+								image={list.image}
 								name={list.name}
 								quantity={list.quantity}
 								price={list.price}
@@ -678,7 +682,7 @@
 								discount={list.discount}
 								cart={list.cart}
 								favorite={list.favorite}
-								type={list.type}
+								type={'pack'}
 								id={list.id}
 								isUser={!admin}
 								isFav={list.isFav}
@@ -988,7 +992,7 @@
 					</div>
 				</div>
 
-				<div class=" h-24 w-full">
+				<div class=" h-24 w-full mt-2">
 					<InputTextarea
 						id="description"
 						name="Description"
@@ -1470,6 +1474,6 @@
 		@apply rounded-[5px] bg-[#f5f5f5];
 	}
 	::-webkit-scrollbar-thumb {
-		@apply w-[1px] rounded-[5px] bg-[#f12711];
+		@apply w-[1px] rounded-[5px] bg-[#00C2FF];
 	}
 </style>

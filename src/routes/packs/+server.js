@@ -14,7 +14,7 @@ export async function POST({ request, cookies }) {
         let imageResponse = ""
         if (data.name == 'createPack' || data.name == "updatePack") {
 
-            if (details.imageSrc !== null && details.imageSrc !== "") {
+            if (details.imageSrc && details.imageSrc !== null && details.imageSrc !== "") {
 
                 const API_KEY = '4254069028d7a8ad8ac35489b9b97bad';
                 let base64 = details.imageSrc.replace(/^data:image\/\w+;base64,/, '')
@@ -126,7 +126,7 @@ export async function POST({ request, cookies }) {
 export async function GET({ request, url }) {
 
     let getData = await pool.query(`SELECT 
-    p.id ,
+    p.id,
     p.name,
     p.description,
     p.image,
@@ -138,21 +138,21 @@ export async function GET({ request, url }) {
     p.stocks,
     p.active,
     p.created_at,
-    JSON_AGG(
-        JSON_BUILD_OBJECT(
-            'itemid', c.id,
-            'cracker_name', c.name,
-            'nitems', pc.quantity
-        )
+    COALESCE(
+        JSON_AGG(
+            JSON_BUILD_OBJECT(
+                'itemid', c.id,
+                'cracker_name', c.name,
+                'nitems', pc.quantity
+            )
+        ) FILTER (WHERE c.id IS NOT NULL),
+        '[]'
     ) AS contents
 FROM crackers p
-JOIN pack_contents pc ON p.id = pc.pack_id
-JOIN crackers c ON pc.cracker_id = c.id
+LEFT JOIN pack_contents pc ON p.id = pc.pack_id
+LEFT JOIN crackers c ON pc.cracker_id = c.id
 WHERE p.type = 'PACK'
-GROUP BY 
-    p.id, p.name, p.description, p.image, p.price,
-    p.actualprice, p.discount, p.quantity, 
-    p.videourl, p.stocks, p.created_at;`)
+GROUP BY p.id;`)
 
 
 

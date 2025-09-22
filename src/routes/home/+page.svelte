@@ -676,7 +676,7 @@
 		@apply rounded-[5px] bg-[#f5f5f5];
 	}
 	::-webkit-scrollbar-thumb {
-		@apply w-[1px] rounded-[5px] bg-[#f12711];
+		@apply w-[1px] rounded-[5px] bg-[#00C2FF];
 	}
 
 	.no-scrollbar::-webkit-scrollbar {
