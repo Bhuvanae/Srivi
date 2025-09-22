@@ -243,18 +243,18 @@
 					optional="false"
 					{validatePage}
 					{validate}
-					bgColor="bg-[#F5F5F5]"
+					bgColor="bg-lightbg"
 					{storeInput}
 				/>
 			</div>
 			<div class="h-[64px] w-full">
-				<InputPassword bind:store={inputData} validation="week" {validate} bgColor="bg-[#F5F5F5]" />
+				<InputPassword bind:store={inputData} validation="week" {validate} bgColor="bg-lightbg" />
 			</div>
 			<Button
 				buttonName={signinButton}
 				loading={signinButton == 'Loading'}
 				buttonClick={signinfn}
-				buttonStyle="button w-full "
+				buttonStyle="button w-full bg-secondary "
 			/>
 
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
