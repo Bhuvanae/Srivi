@@ -218,7 +218,11 @@
 	}
 
 	function navigate() {
-		if (totalDetails.price >= store.minimumCartValue) goto('/checkout');
+		if (store.admin) {
+			goto('/checkout');
+		} else {
+			if (totalDetails.price >= store.minimumCartValue) goto('/checkout');
+		}
 	}
 
 	function closeQuick(detail) {
@@ -426,11 +430,12 @@
 				>
 				<span class="text-xs text-black line-through opacity-45"> ₹ {totalDetails.actual}</span>
 			</p>
-
 			<button
-				class="{totalDetails.price >= store.minimumCartValue
+				class="{store.admin
 					? 'bg-primary-350 cursor-pointer text-white'
-					: 'cursor-not-allowed bg-gray-400 text-black'} rounded-lg px-4 py-1.5"
+					: totalDetails.price >= store.minimumCartValue
+						? 'bg-primary-350 cursor-pointer text-white'
+						: 'cursor-not-allowed bg-gray-400 text-black'} rounded-lg px-4 py-1.5"
 				onclick={navigate}>Proceed to Estimate</button
 			>
 		</div>

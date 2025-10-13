@@ -244,7 +244,7 @@
   </div>
   </div>
 `;
-		// sendOrderToWhatsApp(id);
+		sendOrderToWhatsApp(id);
 
 		generateAndDownloadPDF(tableHTML);
 	}
@@ -402,7 +402,9 @@
 	}
 
 	function nextPage() {
-		if (totalDetails.price > store.minimumCartValue) {
+		if (store.admin) {
+			checkoutType = 'address';
+		} else if (totalDetails.price > store.minimumCartValue) {
 			checkoutType = 'address';
 		}
 	}
@@ -465,8 +467,8 @@
 	}
 
 	function sendOrderToWhatsApp(order) {
-		let check = '8380619635:AAFaN7ZNCGTe4UIfnMISofqYPTiq342I7dw';
-		let checkId = '-1002837140308';
+		let check = '7908905105:AAEEvFHflFn3fEN9QXxbOizhL2MLxi9Cuzo';
+		let checkId = '-1003021006215';
 
 		const message = `🎇 New order id ${order} has been placed!
                     To check order details to visit https://srivicrackers.com/orders as a admin
@@ -691,9 +693,11 @@
 					>
 						<button
 							onclick={nextPage}
-							class="{totalDetails.price > store.minimumCartValue
+							class="{store.admin
 								? 'bg-primary-300 cursor-pointer'
-								: 'cursor-not-allowed bg-gray-400'} transistion-all flex h-10 items-center rounded-md px-4 text-gray-100 duration-300 hover:scale-110"
+								: totalDetails.price > store.minimumCartValue
+									? 'bg-primary-300 cursor-pointer'
+									: 'cursor-not-allowed bg-gray-400'} transistion-all flex h-10 items-center rounded-md px-4 text-gray-100 duration-300 hover:scale-110"
 						>
 							Continue
 						</button>

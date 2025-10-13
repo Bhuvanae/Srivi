@@ -88,12 +88,12 @@
 <style>
 	input[type='number']::-webkit-inner-spin-button,
 	input[type='number']::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
+		@apply appearance-none;
 	}
 
-	/* For Firefox */
 	input[type='number'] {
-		-moz-appearance: textfield;
+		appearance: textfield; /* ✅ standard */
+		-moz-appearance: textfield; /* Firefox */
+		-webkit-appearance: textfield; /* Chrome, Safari, Edge */
 	}
 </style>

@@ -1519,7 +1519,7 @@
 		sliderAnimation={{ in: { x: -200, duration: 400 }, out: { x: -200, duration: 400 } }}
 		topValue={0}
 	>
-		<div class="z-60 flex h-full w-full flex-col gap-4 bg-gray-200 px-6">
+		<div class="z-60 flex h-full w-full flex-col gap-4 bg-gray-200">
 			{#if admin}
 				<div class="flex h-fit w-full justify-center">
 					<button
@@ -1530,7 +1530,7 @@
 					</button>
 				</div>
 			{:else}
-				<div class=" flex flex-col gap-2">
+				<div class=" flex flex-col gap-2 px-6">
 					<p class="text-tertiory-550 font-bold">Filter by Price</p>
 					<div class=" max-w-md space-y-4">
 						<h2 class=" font-semibold">Price : ₹{selectedMin} – ₹{selectedMax}</h2>
@@ -1588,7 +1588,7 @@
 			{/if}
 			<h2 class="text-tertiory-550 text-xl font-bold">Categories</h2>
 
-			<div class="flex h-full w-full flex-col gap-2">
+			<div class="flex h-full w-full flex-col gap-2 overflow-auto px-6">
 				<button
 					class="flex w-full cursor-pointer justify-between {selectedFilter == 'All crackers'
 						? 'text-secondary-250'

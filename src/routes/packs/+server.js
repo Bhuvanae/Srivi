@@ -60,7 +60,7 @@ export async function POST({ request, cookies }) {
         } else if (data.name == "updatePack") {
 
 
-            let update = await pool.query(`SELECT update_cracker_pack($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`, [details.id, details.name, details.description, details.imageSrc ? imageResponse.data.url : details.imageSrc, ((100 - details.discount) / 100) * details.actualprice, details.actualprice, details.discount, details.quantity, null, details.stocks, JSON.stringify(details.items)])
+            let update = await pool.query(`SELECT update_cracker_pack($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`, [details.id, details.name, details.description, details.imageSrc ? imageResponse.data.url : details.image !== null && details.image !== "" ? details.image : null, ((100 - details.discount) / 100) * details.actualprice, details.actualprice, details.discount, details.quantity, null, details.stocks, JSON.stringify(details.items)])
 
             console.log(update.rows[0], 'resultupdate')
 

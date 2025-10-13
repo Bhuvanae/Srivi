@@ -992,7 +992,7 @@
 					</div>
 				</div>
 
-				<div class=" h-24 w-full mt-2">
+				<div class=" mt-2 h-24 w-full">
 					<InputTextarea
 						id="description"
 						name="Description"
@@ -1331,8 +1331,10 @@
 {/if}
 
 {#if showList}
-	<OverlayWithSlot width="w-4/6" close={showListfn}>
-		<div class="flex h-fit min-h-3/5 w-full flex-col gap-6 bg-gray-200 px-6 py-5">
+	<OverlayWithSlot width="w-4/6" cHeight="h-3/4" close={showListfn}>
+		<div
+			class="flex h-fit max-h-full min-h-3/5 w-full flex-col gap-6 rounded-lg bg-gray-200 px-6 py-5"
+		>
 			<div class="flex h-fit w-full justify-between">
 				<div></div>
 				<p class="text-secondary-350 text-center text-2xl font-bold">Crackers List</p>
@@ -1359,8 +1361,8 @@
 					</button>
 				</div>
 			</div>
-			<div class="h-fit w-full">
-				<table class="mt-2 h-fit w-full">
+			<div class="h-fit max-h-full w-full overflow-auto">
+				<table class="mt-2 h-fit max-h-full w-full overflow-auto">
 					<thead>
 						<tr class="text-primary-450">
 							<th class="text-primary-350"> S.No </th>
