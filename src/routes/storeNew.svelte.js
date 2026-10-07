@@ -15,7 +15,7 @@ export function createStore() {
         action: "success"
     });
     let cartNotify = $state({ title: "Cart Update", data: {}, duration: 5000, show: false })
-    let cAddress = $state({ address1: "Srivi Crackers", address2: "5/355,Sivakasi main road,", address3: "Srinivasa nagar, Thayilpatti,", address4: "Sivakasi-626125", address5: 'Virudhunagar (dt.)', mobile1: "+91 9025946872", mobile2: "+91 8838674753" })
+    let cAddress = $state({ address1: "Srivi Crackers,", address2: "Narnapuram Road,", address3: "Near Thavamuniswaran temple,", address4: "Sivakasi-626123,", address5: 'Virudhunagar (dt.)', mobile1: "+91 9025946872", mobile2: "+91 8838674753" })
 
     // Derived states
     const cartItems = $derived(getLocalStorage("cartItems"));

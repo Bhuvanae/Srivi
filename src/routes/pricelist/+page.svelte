@@ -6,6 +6,9 @@
 	import { storeData } from '../store.svelte';
 	import { storeNew } from '../storeNew.svelte';
 	import { browser } from '$app/environment';
+	import OverlayWithSlot from '$lib/overlayWithSlot.svelte';
+	import InputText from '$lib/inputText.svelte';
+	import InputNumber from '$lib/inputNumber.svelte';
 
 	let html2pdf: () => {
 		(): any;
@@ -112,7 +115,18 @@
 	const logoBase64: string =
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcBhhpwYgo4dQj8vGk1e-dEi0Ml4gBXUc1cQ&s';
 
+	// onclick={() => {
+	// 				if (userNamePhone.Name && userNamePhone.Phone) {
+	// 					let message = `Thank you for your interest in our products. Here is the price list for the crackers you requested:\n\n${generateMessage()}\n\nPlease let us know if you have any questions or if you would like to place an order. We look forward to serving you!\n\nBest regards,\n${userNamePhone.Name}\nPhone: ${userNamePhone.Phone}`;
+	// 					window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+	// 					userNamePhone.overlay = false;
+	// 				} else {
+	// 					alert('Please enter both name and phone number.');
+	// 				}
+	// 			}}
+
 	async function downloadPDF(list: any): Promise<void> {
+	
 		loading = 'updateStock';
 		if (list == 'stock') {
 			let convertArray: { id: any; stocks: any }[] = [];
@@ -136,6 +150,7 @@
 				};
 			}
 		} else {
+			console.log('check');
 			const tableHTML = `
 <div class="flex h-fit w-full flex-col gap-3 mb-4">
 	<div
@@ -224,8 +239,8 @@ ${
 		<tr><td colspan=6 class="text-tertiory-700 font-bold text-right px-2 py-2 border border-[#ddd]">Gross Amount</td>
 		<td class="text-tertiory-700 font-bold border border-[#ddd] px-2 py-2 text-center ">${totalDetails.actual}</td>
 		</tr>
-		<tr><td colspan=6 class="text-tertiory-700 font-bold text-right border border-[#ddd] px-2 py-2 ">Discount Amount</td>
-		<td class="text-tertiory-700 font-bold border border-[#ddd] px-2 py-2 text-center">${totalDetails.actual - totalDetails.price}</td>
+		<tr><td colspan=6 class="text-tertiory-700 font-bold text-right border border-[#ddd] px-2 py-2 "><span class="text-[#a91b0c]">(80% Discount)</span> Discount Amount</td>
+		<td class="text-tertiory-700 font-bold border border-[#ddd] px-2 py-2 text-center">${totalDetails.actual - totalDetails.price} (-)</td>
 		</tr>
 	<tr><td colspan=6 class="text-tertiory-700 font-bold text-right border border-[#ddd] px-2 py-2 ">Net Amount</td>
 		<td class="text-tertiory-700 font-bold border border-[#ddd] px-2 py-2 text-center">${totalDetails.price}</td>
@@ -238,6 +253,7 @@ ${
   </div>
 </div>`;
 			generateAndDownloadPDF(tableHTML, list);
+
 		}
 	}
 	let pricelist = $state('list');
@@ -254,23 +270,42 @@ ${
 				tempDiv.innerHTML = htmlString;
 				const opt = {
 					margin: 10,
-					filename: 'Preview.pdf',
+					filename: userNamePhone?.name,
 					image: { type: 'jpeg', quality: 0.98 },
 					html2canvas: { scale: 2 },
 					jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
 				};
 
-				// Open in new window for preview
-				await html2pdf()
-					.set(opt)
-					.from(tempDiv)
-					.toPdf()
-					.get('pdf')
-					.then((pdf: { output: (arg0: string) => any }) => {
-						const pdfBlob = pdf.output('blob');
-						const pdfUrl = URL.createObjectURL(pdfBlob);
-						window.open(pdfUrl, '_blank');
-					});
+				if (userNamePhone.overlay) {
+					await html2pdf().set(opt).from(tempDiv).save();
+					if (userNamePhone.name && userNamePhone.phone) {
+						let message = `Thank you for your interest in our products. Here is the price list for the crackers you requested`;
+						window.open(`https://wa.me/${userNamePhone.phone}?text=${message}`, '_blank');
+						userNamePhone.overlay = false;
+					} else {
+						alert('Please enter both name and phone number.');
+					}
+				} else {
+					// Open in new window for preview
+					await html2pdf()
+						.set(opt)
+						.from(tempDiv)
+						.toPdf()
+						.get('pdf')
+						.then((pdf: { output: (arg0: string) => any }) => {
+							const pdfBlob = pdf.output('blob');
+							const pdfUrl = URL.createObjectURL(pdfBlob);
+							// const link = document.createElement(pdfUrl);
+							// link.href = pdfUrl;
+							// link.download = 'fileName';
+							// document.body.appendChild(link);
+							// link.click();
+							// document.body.removeChild(link);
+							// console.log(link, 'link has been craeted');
+							// console.log(pdfUrl, 'url');
+							window.open(pdfUrl, '_blank');
+						});
+				}
 			} else {
 				const tempDiv = document.createElement('div');
 				tempDiv.innerHTML = htmlString;
@@ -443,6 +478,11 @@ ${
 		scroll?.scrollTo({ top: 0, behavior: 'smooth' });
 		serial = 1;
 	}
+	let userNamePhone = $state({ name: '', phone: '', overlay: false });
+
+	function getNameandNumber() {
+		userNamePhone.overlay = true;
+	}
 </script>
 
 <section
@@ -584,14 +624,14 @@ ${
 				<!-- {:else if pricelist=="preview"} -->
 				<tbody>
 					{#if pricelist == 'list' || pricelist == 'stock'}
-						{#each filterCrackerList as crackers}
+						{#each filterCrackerList as crackers, i}
 							<tr class="bg-secondary-200 text-center"
 								><td class="border py-2.5 text-center font-bold" colspan="7"
 									>{crackers.result.type}</td
 								></tr
 							>
 
-							{#each crackers.result.data as cracker}
+							{#each crackers.result.data as cracker, crackerIndex}
 								<tr
 									class="text-center {cracker.cartQuantity
 										? 'bg-green-700 text-white'
@@ -643,10 +683,42 @@ ${
 													</button>
 
 													<div
+														class="flex h-8 w-12 items-center justify-center border-t border-b border-gray-300"
+													>
+														<!-- {cracker.cartQuantity || 0} -->
+														<div class="h-full w-full">
+															<input
+																class="h-full w-full px-2 text-center"
+																type="number"
+																bind:value={cracker.cartQuantity}
+															/>
+															<!-- <InputNumber
+																id="cartQuantity"
+																name="Quantity"
+																placeholder=" "
+																bind:store={crackers[i]}
+																bgColor="bg-gray-200"
+																validate={() => {
+																	return true;
+																}}
+															/> -->
+															<!-- <InputText
+													id="phone"
+													name="Phone"
+													bind:store={userNamePhone}
+													bgColor="bg-gray-200"
+													validate={() => {
+														return true;
+													}}
+												/> -->
+														</div>
+													</div>
+
+													<!-- <div
 														class="flex h-8 w-8 items-center justify-center border-t border-b border-gray-300"
 													>
 														{cracker.cartQuantity || 0}
-													</div>
+													</div> -->
 
 													<button
 														aria-label="Increase quantity"
@@ -720,7 +792,23 @@ ${
 										<div
 											class="flex h-8 w-8 items-center justify-center border-t border-b border-gray-300"
 										>
-											{cracker.cartQuantity || 0}
+											<!-- {cracker.cartQuantity || 0} -->
+											<div class="h-full w-full">
+												<input
+													class="h-full w-full px-2 text-center"
+													type="number"
+													bind:value={cracker.cartQuantity}
+												/>
+												<!-- <InputText
+													id="phone"
+													name="Phone"
+													bind:store={userNamePhone}
+													bgColor="bg-gray-200"
+													validate={() => {
+														return true;
+													}}
+												/> -->
+											</div>
 										</div>
 
 										<button
@@ -822,6 +910,15 @@ ${
 							: 'Print'}
 				{/if}
 			</button>
+			{#if pricelist == 'preview'}
+				<button
+					in:scale={{ duration: 1000 }}
+					onclick={() => getNameandNumber('list')}
+					class="bg-primary-400 mt-4 cursor-pointer rounded px-6 py-2 text-white transition-all duration-500 hover:scale-105"
+				>
+					Share via WhatsApp
+				</button>
+			{/if}
 		{/if}
 	{:else}
 		<div
@@ -845,6 +942,60 @@ ${
 		</div>
 	{/if}
 </section>
+{#if userNamePhone.overlay}
+	<OverlayWithSlot
+		width="w-2/5"
+		close={() => (userNamePhone.overlay = false)}
+		elsefn={() => {
+			window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+			userNamePhone.overlay = false;
+		}}
+	>
+		<div class="flex h-fit w-full flex-col gap-4 rounded-lg bg-gray-200 px-5 py-6">
+			<h1 class="text-lg font-semibold text-gray-700">Enter your details</h1>
+			<div class="h-16 w-full">
+				<InputText
+					id="name"
+					name="Name"
+					bind:store={userNamePhone}
+					bgColor="bg-gray-200"
+					validate={() => {
+						return true;
+					}}
+				/>
+			</div>
+			<div class="h-16 w-full">
+				<InputText
+					id="phone"
+					name="Phone"
+					bind:store={userNamePhone}
+					bgColor="bg-gray-200"
+					validate={() => {
+						return true;
+					}}
+				/>
+			</div>
+			<div class="flex w-full justify-center gap-4">
+				<button
+					onclick={() => {
+						userNamePhone.overlay = false;
+					}}
+					class="bg-primary-400 mt-4 cursor-pointer rounded px-6 py-2 text-white transition-all duration-500 hover:scale-105"
+				>
+					Cancel
+				</button>
+
+				<button
+					onclick={() => downloadPDF(pricelist)}
+					class="bg-primary-400 mt-4 cursor-pointer rounded px-6 py-2 text-white transition-all duration-500 hover:scale-105"
+				>
+					Send via WhatsApp
+				</button>
+			</div>
+		</div>
+	</OverlayWithSlot>
+{/if}
+<!-- <OverlayWithSlot width="w-4/6" close={closeQuick} elsefn={showAutoCompletefn}></OverlayWithSlot> -->
 
 <!-- <div class="flex h-full w-8 flex-col justify-between pt-4">
 	<svg

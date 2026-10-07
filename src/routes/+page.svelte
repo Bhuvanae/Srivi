@@ -8,9 +8,9 @@
 	});
 </script>
 
-<section class="flex h-[100vh] w-full items-center justify-center">
-	<div class="flex h-full w-full gap-2">
-		<p>loading</p>
-		<LoadingAnimation color="bg-white" />
+<section class="bg-lightbg flex h-full min-h-[400px] w-[100vw] items-center justify-center">
+	<div class="flex items-center gap-2">
+		<p class="loadingText">loading</p>
+		<LoadingAnimation color="bg-tertiory" />
 	</div>
 </section>

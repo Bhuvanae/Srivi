@@ -131,7 +131,7 @@
 		{/if}
 	</div>
 	<div class="flex h-full w-full flex-col gap-2">
-		<p class="text-lg font-[900] text-gray-700">
+		<p class="text-lg font-[900] text-gray-700" title={name}>
 			{name.length > 18 ? `${name.slice(0, 17)}...` : name}
 		</p>
 		<div class="flex h-fit w-full items-center gap-2">

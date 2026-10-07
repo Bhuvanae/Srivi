@@ -261,7 +261,7 @@
 		if (
 			crackerDetail.name &&
 			crackerDetail.actualprice &&
-			crackerDetail.description &&
+			// crackerDetail.description &&
 			crackerDetail.discount &&
 			crackerDetail.quantity &&
 			crackerDetail.type &&

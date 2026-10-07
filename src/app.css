@@ -219,7 +219,10 @@ body {
 	@apply mt-1 text-xs font-medium text-[red];
 }
 .button {
-	@apply mt-2 flex items-center justify-center gap-2 rounded-md bg-amber-600 py-2 font-semibold text-black;
+	@apply mt-2 flex items-center justify-center gap-2 rounded-md bg-secondary-300 py-2 font-semibold text-lightbg;
+}
+.loadingText {
+	@apply text-tertiory text-xl font-bold;
 }
 .no_break {
 	display: table-row;
