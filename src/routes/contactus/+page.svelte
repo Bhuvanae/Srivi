@@ -109,6 +109,7 @@
 			observer.unobserve(container4);
 		};
 	});
+	console.log('page check')
 </script>
 
 <section class="min-[500px] flex h-fit w-full flex-col gap-8 px-3 py-10 md:px-10 lg:px-32">
