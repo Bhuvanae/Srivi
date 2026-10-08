@@ -109,7 +109,7 @@
 			observer.unobserve(container4);
 		};
 	});
-	console.log('page check')
+	console.log('page check');
 </script>
 
 <section class="min-[500px] flex h-fit w-full flex-col gap-8 px-3 py-10 md:px-10 lg:px-32">
@@ -135,7 +135,10 @@
 			<p class="mt-6 text-2xl font-semibold text-white">{storeNew.cAddress.address1}</p>
 			<p class="text-lg font-medium text-white">{storeNew.cAddress.address2}</p>
 			<p class="text-lg font-medium text-white">{storeNew.cAddress.address3}</p>
-			<p class="text-lg font-medium text-white">{storeNew.cAddress.address4} {storeNew.cAddress.address5}</p>
+			<p class="text-lg font-medium text-white">
+				{storeNew.cAddress.address4}
+				{storeNew.cAddress.address5}
+			</p>
 		</div>
 
 		<div
@@ -431,7 +434,7 @@
 			: 'translate-y-10 opacity-0'} transistion-all delay-300 duration-800"
 	>
 		<!-- svelte-ignore a11y_missing_attribute -->
-<!-- 
+		<!-- 
 		<iframe
 			src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1756838132089!5m2!1sen!2sin!6m8!1m7!1sWz3T4iRmZsfFr3jo8FVUAA!2m2!1d9.38386278493118!2d77.77954840378236!3f260.5338755852104!4f-0.08559877376583813!5f3.325193203789971"
 			width="100%"
