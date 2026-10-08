@@ -44,7 +44,7 @@
 	}
 	// sign in function
 	async function signinfn() {
-		console.log('build check')
+		console.log('build check after error')
 		if (signinButton == 'Signin') {
 			signinButton = 'Loading';
 			if (inputData.email) {
