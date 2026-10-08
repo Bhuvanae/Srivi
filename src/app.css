@@ -219,11 +219,17 @@ body {
 	@apply mt-1 text-xs font-medium text-[red];
 }
 .button {
-<<<<<<< HEAD
-	@apply mt-2 flex items-center justify-center gap-2 rounded-md bg-secondary-300 py-2 font-semibold text-lightbg;
-=======
-	@apply bg-secondary-300 text-lightbg mt-2 flex items-center justify-center gap-2 rounded-md py-2 font-semibold;
->>>>>>> d5745d27f1b279fba6d149bb16f5956e78ceb675
+	margin-top: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 0.375rem;
+	background-color: var(--color-secondary-300);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-weight: 600;
+	color: var(--color-lightbg);
 }
 .loadingText {
 	@apply text-tertiory text-xl font-bold;
@@ -246,3 +252,5 @@ body {
 		-webkit-appearance: textfield; /* Chrome, Safari, Edge */
 	}
 }
+
+/* @apply bg-secondary-300 text-lightbg mt-2 flex items-center justify-center gap-2 rounded-md py-2 font-semibold; */
