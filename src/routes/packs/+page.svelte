@@ -25,6 +25,7 @@
 	import { storeNew } from '../storeNew.svelte';
 	import packNull from '$lib/assets/couponNull.webp';
 	import { browser } from '$app/environment';
+	import Toggle1 from '$lib/toggle1.svelte';
 
 	let store = $state(storeData());
 	let packData = $state([]);
@@ -263,6 +264,11 @@
 				detail.action = 'update';
 				detail.items = detail.extraData.items;
 				crackerDetail = detail;
+				if (detail.items.length !== 0) {
+					createType = 'Pack';
+				} else {
+					createType = 'Giftbox';
+				}
 			}
 		}
 	}
@@ -354,10 +360,12 @@
 			crackerDetail.actualprice &&
 			crackerDetail.discount &&
 			crackerDetail.description &&
-			crackerDetail.items.length !== 0 &&
-			typeof crackerDetail.quantity == 'number' &&
-			crackerDetail.quantity !== 0 &&
-			crackerDetail.stocks
+			createType == 'Pack'
+				? crackerDetail.items.length !== 0
+				: crackerDetail.items &&
+					typeof crackerDetail.quantity == 'number' &&
+					crackerDetail.quantity !== 0 &&
+					crackerDetail.stocks
 		) {
 			if (crackerDetail.action == 'update') {
 				let updatePack = await fetchApi('/packs', 'POST', 'updatePack', crackerDetail);
@@ -555,6 +563,8 @@
 	function reloadPage() {
 		location.reload();
 	}
+
+	let createType = $state('Pack');
 </script>
 
 <section class="flex h-fit min-h-[600px] w-full flex-col gap-8 px-3 py-5 md:px-10 lg:px-32">
@@ -664,7 +674,7 @@
 						{#if list.id}
 							<CrackerCard
 								index={i}
-								image={list.image || packNull}
+								image={list.image}
 								name={list.name}
 								quantity={list.quantity}
 								price={list.price}
@@ -672,7 +682,7 @@
 								discount={list.discount}
 								cart={list.cart}
 								favorite={list.favorite}
-								type={list.type}
+								type={'pack'}
 								id={list.id}
 								isUser={!admin}
 								isFav={list.isFav}
@@ -773,8 +783,16 @@
 {#if showAddcrackers}
 	<OverlayWithSlot width="w-1/2" close={createPack}>
 		<section class="flex h-full flex-col gap-4 rounded-lg bg-gray-200 py-6">
-			<p class="text-primary-500 font-andika text-center text-xl font-semibold">Cracker Details</p>
+			<p class="text-primary-500 font-andika text-center text-xl font-semibold">Pack Details</p>
 			<div class="flex h-full w-full flex-col gap-6 overflow-auto px-4">
+				<div class="flex h-fit w-full justify-center">
+					<Toggle1
+						selected={createType}
+						change={(type) => {
+							createType = type;
+						}}
+					/>
+				</div>
 				<div
 					class="grid h-fit w-full grid-cols-1 gap-6 sm:h-[300px] sm:max-h-[300px] sm:grid-cols-2"
 				>
@@ -942,21 +960,39 @@
 								bgColor="bg-gray-200"
 							/>
 						</div>
-						<div class="h-16 w-full">
-							<InputNumber
-								id="stocks"
-								name="Stock"
-								bind:store={crackerDetail}
-								optional={false}
-								{validate}
-								{validatePage}
-								bgColor="bg-gray-200"
-							/>
+						<div
+							class="grid h-16 w-full {createType == 'Pack' ? 'grid-cols-1' : 'grid-cols-2'} gap-2"
+						>
+							{#if createType !== 'Pack'}
+								<div class="h-16 w-full">
+									<InputNumber
+										id="quantity"
+										name="Quantity"
+										bind:store={crackerDetail}
+										optional={false}
+										{validate}
+										{validatePage}
+										bgColor="bg-gray-200"
+									/>
+								</div>
+							{/if}
+
+							<div class="h-16 w-full">
+								<InputNumber
+									id="stocks"
+									name="Stock"
+									bind:store={crackerDetail}
+									optional={false}
+									{validate}
+									{validatePage}
+									bgColor="bg-gray-200"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class=" h-24 w-full">
+				<div class=" mt-2 h-24 w-full">
 					<InputTextarea
 						id="description"
 						name="Description"
@@ -967,126 +1003,128 @@
 						bgColor="bg-gray-200"
 					/>
 				</div>
-				<div class="-mt-2 flex h-fit w-full flex-col gap-2">
-					<p class="text-primary-400 text-lg font-semibold">Crackers List</p>
+				{#if createType == 'Pack'}
+					<div class="-mt-2 flex h-fit w-full flex-col gap-2">
+						<p class="text-primary-400 text-lg font-semibold">Crackers List</p>
 
-					<div class="grid h-fit w-full grid-cols-1 gap-3 sm:min-h-16 sm:grid-cols-2">
-						<div class="h-full w-full">
-							<div id="parent" class=" relative h-16 w-full" onfocus={(e) => focusContainer(e)}>
-								<InputText
-									id="type"
-									name="Cracker Name"
-									bind:store={crackerDetail}
-									optional={false}
-									{validate}
-									{validatePage}
-									bgColor="bg-gray-200"
-									{componentHandlers}
-									focusHandler={showAutoCompletefn}
-								/>
-								{#if crackerList.length !== 0 && showAutoComplete}
-									<div
-										id="child"
-										class="bg-tertiory-50 absolute top-[50px] z-20 h-fit max-h-40 w-full flex-col overflow-auto rounded-lg"
-									>
-										{#each crackerList as cata, i}
-											<button
-												id="childButton"
-												class="flex h-fit w-full justify-between border border-gray-300 px-5 py-2 {i ==
-												0
-													? 'rounded-t-lg text-left'
-													: crackerList.length - 1 == i
-														? 'rounded-b-lg'
-														: ''}"
-												onclick={() => chooseType(cata)}
-												aria-label="add crackers"
-											>
-												<p class="font-semibold text-gray-700">{cata.name}</p>
-												<p class="font-semibold text-gray-700">(₹ {Math.trunc(cata.price)})</p>
-											</button>
-										{/each}
+						<div class="grid h-fit w-full grid-cols-1 gap-3 sm:min-h-16 sm:grid-cols-2">
+							<div class="h-full w-full">
+								<div id="parent" class=" relative h-16 w-full" onfocus={(e) => focusContainer(e)}>
+									<InputText
+										id="type"
+										name="Cracker Name"
+										bind:store={crackerDetail}
+										optional={false}
+										{validate}
+										{validatePage}
+										bgColor="bg-gray-200"
+										{componentHandlers}
+										focusHandler={showAutoCompletefn}
+									/>
+									{#if crackerList.length !== 0 && showAutoComplete}
+										<div
+											id="child"
+											class="bg-tertiory-50 absolute top-[50px] z-20 h-fit max-h-40 w-full flex-col overflow-auto rounded-lg"
+										>
+											{#each crackerList as cata, i}
+												<button
+													id="childButton"
+													class="flex h-fit w-full justify-between border border-gray-300 px-5 py-2 {i ==
+													0
+														? 'rounded-t-lg text-left'
+														: crackerList.length - 1 == i
+															? 'rounded-b-lg'
+															: ''}"
+													onclick={() => chooseType(cata)}
+													aria-label="add crackers"
+												>
+													<p class="font-semibold text-gray-700">{cata.name}</p>
+													<p class="font-semibold text-gray-700">(₹ {Math.trunc(cata.price)})</p>
+												</button>
+											{/each}
+										</div>
+									{/if}
+								</div>
+							</div>
+							<div class="grid h-full w-full grid-cols-1 items-center gap-3 sm:grid-cols-2">
+								<div class="h-16 w-full">
+									<InputNumber
+										id="itemQuantity"
+										name="Quantity"
+										bind:store={crackerDetail}
+										optional={false}
+										{validate}
+										{validatePage}
+										bgColor="bg-gray-200"
+									/>
+								</div>
+								<button
+									class="bg-secondary-350 h-fit cursor-pointer rounded-md px-1.5 py-3 transition-all duration-300 hover:scale-105"
+									onclick={addCrackersinArray}
+								>
+									Add
+								</button>
+							</div>
+						</div>
+						<div class="flex flex-col gap-2">
+							{#if crackerDetail.items}
+								{#if crackerDetail.items.length !== 0}
+									<div class="h-12 w-full">
+										<table class="h-fit w-full">
+											<thead>
+												<tr class="text-primary-450">
+													<th> S.No </th>
+													<th> Cracker Name</th>
+													<th> Quantity</th>
+													<th> </th>
+												</tr>
+											</thead>
+											<tbody>
+												{#each crackerDetail.items as cracker, i}
+													<tr
+														class="h-fit"
+														out:scale={{ duration: 500 }}
+														in:scale={{ duration: 500 }}
+													>
+														<td>{i + 1}</td>
+														{#each Object.entries(cracker) as [key, value], i}
+															{#if key == 'cracker_name' || key == 'nitems'}
+																<td class="text-center">{value}</td>
+															{/if}
+														{/each}
+														<td class="flex items-center">
+															<button
+																class="transistion-all cursor-pointer duration-300 hover:scale-105"
+																aria-label="delete"
+																onclick={() => addCrackersinArray(cracker)}
+																><svg
+																	width="20"
+																	height="20"
+																	viewBox="0 0 24 24"
+																	fill="none"
+																	xmlns="http://www.w3.org/2000/svg"
+																>
+																	<path
+																		d="M3 6.52381C3 6.12932 3.32671 5.80952 3.72973 5.80952H8.51787C8.52437 4.9683 8.61554 3.81504 9.45037 3.01668C10.1074 2.38839 11.0081 2 12 2C12.9919 2 13.8926 2.38839 14.5496 3.01668C15.3844 3.81504 15.4756 4.9683 15.4821 5.80952H20.2703C20.6733 5.80952 21 6.12932 21 6.52381C21 6.9183 20.6733 7.2381 20.2703 7.2381H3.72973C3.32671 7.2381 3 6.9183 3 6.52381Z"
+																		class="fill-secondary-450"
+																	/>
+																	<path
+																		d="M11.6066 22H12.3935C15.101 22 16.4547 22 17.3349 21.1368C18.2151 20.2736 18.3052 18.8576 18.4853 16.0257L18.7448 11.9452C18.8425 10.4086 18.8913 9.64037 18.4498 9.15352C18.0082 8.66667 17.2625 8.66667 15.7712 8.66667H8.22884C6.7375 8.66667 5.99183 8.66667 5.55026 9.15352C5.1087 9.64037 5.15756 10.4086 5.25528 11.9452L5.51479 16.0257C5.69489 18.8576 5.78494 20.2736 6.66513 21.1368C7.54532 22 8.89906 22 11.6066 22Z"
+																		class="fill-secondary-450"
+																	/>
+																</svg>
+															</button>
+														</td>
+													</tr>
+												{/each}
+											</tbody>
+										</table>
 									</div>
 								{/if}
-							</div>
-						</div>
-						<div class="grid h-full w-full grid-cols-1 items-center gap-3 sm:grid-cols-2">
-							<div class="h-16 w-full">
-								<InputNumber
-									id="itemQuantity"
-									name="Quantity"
-									bind:store={crackerDetail}
-									optional={false}
-									{validate}
-									{validatePage}
-									bgColor="bg-gray-200"
-								/>
-							</div>
-							<button
-								class="bg-secondary-350 h-fit cursor-pointer rounded-md px-1.5 py-3 transition-all duration-300 hover:scale-105"
-								onclick={addCrackersinArray}
-							>
-								Add
-							</button>
-						</div>
-					</div>
-					<div class="flex flex-col gap-2">
-						{#if crackerDetail.items}
-							{#if crackerDetail.items.length !== 0}
-								<div class="h-12 w-full">
-									<table class="h-fit w-full">
-										<thead>
-											<tr class="text-primary-450">
-												<th> S.No </th>
-												<th> Cracker Name</th>
-												<th> Quantity</th>
-												<th> </th>
-											</tr>
-										</thead>
-										<tbody>
-											{#each crackerDetail.items as cracker, i}
-												<tr
-													class="h-fit"
-													out:scale={{ duration: 500 }}
-													in:scale={{ duration: 500 }}
-												>
-													<td>{i + 1}</td>
-													{#each Object.entries(cracker) as [key, value], i}
-														{#if key == 'cracker_name' || key == 'nitems'}
-															<td class="text-center">{value}</td>
-														{/if}
-													{/each}
-													<td class="flex items-center">
-														<button
-															class="transistion-all cursor-pointer duration-300 hover:scale-105"
-															aria-label="delete"
-															onclick={() => addCrackersinArray(cracker)}
-															><svg
-																width="20"
-																height="20"
-																viewBox="0 0 24 24"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<path
-																	d="M3 6.52381C3 6.12932 3.32671 5.80952 3.72973 5.80952H8.51787C8.52437 4.9683 8.61554 3.81504 9.45037 3.01668C10.1074 2.38839 11.0081 2 12 2C12.9919 2 13.8926 2.38839 14.5496 3.01668C15.3844 3.81504 15.4756 4.9683 15.4821 5.80952H20.2703C20.6733 5.80952 21 6.12932 21 6.52381C21 6.9183 20.6733 7.2381 20.2703 7.2381H3.72973C3.32671 7.2381 3 6.9183 3 6.52381Z"
-																	class="fill-secondary-450"
-																/>
-																<path
-																	d="M11.6066 22H12.3935C15.101 22 16.4547 22 17.3349 21.1368C18.2151 20.2736 18.3052 18.8576 18.4853 16.0257L18.7448 11.9452C18.8425 10.4086 18.8913 9.64037 18.4498 9.15352C18.0082 8.66667 17.2625 8.66667 15.7712 8.66667H8.22884C6.7375 8.66667 5.99183 8.66667 5.55026 9.15352C5.1087 9.64037 5.15756 10.4086 5.25528 11.9452L5.51479 16.0257C5.69489 18.8576 5.78494 20.2736 6.66513 21.1368C7.54532 22 8.89906 22 11.6066 22Z"
-																	class="fill-secondary-450"
-																/>
-															</svg>
-														</button>
-													</td>
-												</tr>
-											{/each}
-										</tbody>
-									</table>
-								</div>
 							{/if}
-						{/if}
+						</div>
 					</div>
-				</div>
+				{/if}
 			</div>
 			<div class="mt-10 flex h-fit w-full items-center justify-center gap-3">
 				<button
@@ -1293,8 +1331,10 @@
 {/if}
 
 {#if showList}
-	<OverlayWithSlot width="w-4/6" close={showListfn}>
-		<div class="flex h-fit min-h-3/5 w-full flex-col gap-6 bg-gray-200 px-6 py-5">
+	<OverlayWithSlot width="w-4/6" cHeight="h-3/4" close={showListfn}>
+		<div
+			class="flex h-fit max-h-full min-h-3/5 w-full flex-col gap-6 rounded-lg bg-gray-200 px-6 py-5"
+		>
 			<div class="flex h-fit w-full justify-between">
 				<div></div>
 				<p class="text-secondary-350 text-center text-2xl font-bold">Crackers List</p>
@@ -1321,8 +1361,8 @@
 					</button>
 				</div>
 			</div>
-			<div class="h-fit w-full">
-				<table class="mt-2 h-fit w-full">
+			<div class="h-fit max-h-full w-full overflow-auto">
+				<table class="mt-2 h-fit max-h-full w-full overflow-auto">
 					<thead>
 						<tr class="text-primary-450">
 							<th class="text-primary-350"> S.No </th>
@@ -1436,6 +1476,6 @@
 		@apply rounded-[5px] bg-[#f5f5f5];
 	}
 	::-webkit-scrollbar-thumb {
-		@apply w-[1px] rounded-[5px] bg-[#f12711];
+		@apply w-[1px] rounded-[5px] bg-[#00C2FF];
 	}
 </style>

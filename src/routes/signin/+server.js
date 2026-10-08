@@ -13,18 +13,19 @@ export async function POST({ request, cookies }) {
                 return json({ error: signin.rows[0].user_signin.error })
             } else {
                 // return json({ result: signin.rows[0] });
-                return json({result:{resStatus:200, message: "success", id: 1}});
+                // return json({result:{resStatus:200, message: "success", id: 1}});
+                const signin = await pool.query(`select * from admin where email='${details.email}' and password_hash='${details.password}'`)
+
+                console.log(signin.rows[0], 'result')
+                if (!signin.rows[0].id) {
+                    return json({ error: signin.rows[0].user_signin.error })
+                } else {
+                    return json({ result: signin.rows[0] });
+                }
+                // bob1@example.com','12345678'
             }
 
-            // const signin = await pool.query(`select * from admin where email='${details.email}' and password_hash='${details.password}'`)
 
-            // console.log(signin.rows[0], 'result')
-            // if (!signin.rows[0].id) {
-            //     return json({ error: signin.rows[0].user_signin.error })
-            // } else {
-            //     return json({ result: signin.rows[0] });
-            // }
-            // bob1@example.com','12345678'
 
         } else if (data.name == "forget") {
             const forget = await pool.query(`select * from forgot_password($1)`, [details.email])

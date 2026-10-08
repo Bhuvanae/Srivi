@@ -85,4 +85,15 @@
 	</div>
 </div>
 
+<style>
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		@apply appearance-none;
+	}
 
+	input[type='number'] {
+		appearance: textfield; /* ✅ standard */
+		-moz-appearance: textfield; /* Firefox */
+		-webkit-appearance: textfield; /* Chrome, Safari, Edge */
+	}
+</style>

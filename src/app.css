@@ -219,7 +219,11 @@ body {
 	@apply mt-1 text-xs font-medium text-[red];
 }
 .button {
+<<<<<<< HEAD
 	@apply mt-2 flex items-center justify-center gap-2 rounded-md bg-secondary-300 py-2 font-semibold text-lightbg;
+=======
+	@apply bg-secondary-300 text-lightbg mt-2 flex items-center justify-center gap-2 rounded-md py-2 font-semibold;
+>>>>>>> d5745d27f1b279fba6d149bb16f5956e78ceb675
 }
 .loadingText {
 	@apply text-tertiory text-xl font-bold;
@@ -236,7 +240,9 @@ body {
 		@apply appearance-none;
 	}
 
-	/* input[type='number'] {
-		-moz-appearance: textfield;
-	} */
+	input[type='number'] {
+		appearance: textfield; /* ✅ standard */
+		-moz-appearance: textfield; /* Firefox */
+		-webkit-appearance: textfield; /* Chrome, Safari, Edge */
+	}
 }

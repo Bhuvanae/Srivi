@@ -12,16 +12,13 @@ export async function POST({ request, cookies }) {
     let details = data.details
 
     try {
-        console.log(details, "details of the api")
-        if (data.name == "addCracker") {
-            console.log('data comes with value action insert')
-            let imageResponse = {}
+        let imageResponse = {}
+
+        if (data.name == "addCracker" || data.name == "updateCracker") {
             if (details.imageSrc && details.imageSrc !== null) {
 
                 const API_KEY = '4254069028d7a8ad8ac35489b9b97bad';
                 let base64 = details.imageSrc.replace(/^data:image\/\w+;base64,/, '')
-
-
                 const formData = new FormData();
                 formData.append('key', API_KEY);
                 formData.append('image', base64);
@@ -31,10 +28,12 @@ export async function POST({ request, cookies }) {
                 });
 
                 imageResponse = await response.json();
-                console.log('Image URL:', imageResponse.data.url);
+
             }
+        }
+        if (data.name == "addCracker") {
+
             try {
-                console.log(imageResponse.data ? imageResponse.data.url : null)
                 const insert = await pool.query(
                     `SELECT insert_multiple_crackers3($1)`,
                     [JSON.stringify({
@@ -48,12 +47,11 @@ export async function POST({ request, cookies }) {
                             price: Math.trunc(details.actualprice * ((100 - details.discount) / 100)),
                             quantity: details.quantity,
                             videourl: details.videourl || null,
-                            stocks: details.stocks
+                            stocks: details.stocks,
+                            deleteimg: imageResponse.data ? imageResponse.data.delete_url : null,
                         }]
                     })]
                 );
-
-                console.log(insert.rows[0], 'result');
 
                 if (!insert.rows[0]) {
                     return json({ error: insert.rows[0].error })
@@ -69,13 +67,12 @@ export async function POST({ request, cookies }) {
                 });
             }
         } else if (data.name == "updateCracker") {
-            console.log('condition else')
             let update = await pool.query(`SELECT * FROM bulk_update_crackers_json1($1)`, [JSON.stringify([
                 {
                     id: details.id,
                     name: details.name,
                     description: details.description,
-                    image: details.image || null,
+                    image: imageResponse.data ? imageResponse.data.url : details.image !== "" ? details.image : null,
                     type: details.type,
                     price: Math.trunc(details.actualprice * ((100 - details.discount) / 100)),
                     actualprice: details.actualprice,
@@ -84,17 +81,15 @@ export async function POST({ request, cookies }) {
                     discount: details.discount,
                     quantity: details.quantity,
                     videourl: details.videourl || null,
-                    stocks: details.stocks
+                    stocks: details.stocks,
+                    deleteimg: imageResponse.data ? imageResponse.data.delete_url : null,
                 },
 
             ])])
 
-
-
             if (!update.rows[0]) {
                 return json({ error: update.rows[0].error })
             } else {
-                console.log("check")
                 return json({ result: update.rows[0].bulk_update_crackers_json1.data[0].to_jsonb });
             }
 

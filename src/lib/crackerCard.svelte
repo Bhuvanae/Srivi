@@ -2,6 +2,8 @@
 	import AssetImage from './assetImage.svelte';
 	import CrakerLoading from './crakerLoading.svelte';
 	import nullImage from '$lib/assets/nullimage.webp';
+	import packNull from '$lib/assets/couponNull.webp';
+
 	import { fly } from 'svelte/transition';
 
 	let {
@@ -88,7 +90,7 @@
 
 	<div class="relative h-full w-full">
 		<div class="relative h-full max-h-full min-h-full w-full max-w-full min-w-full">
-			<AssetImage imageSrc={image == null ? nullImage : image} />
+			<AssetImage imageSrc={image == null ? (type == 'pack' ? packNull : nullImage) : image} />
 			{#if !active && !isUser}
 				<div class="absolute inset-0 flex items-center justify-center">
 					<div
@@ -102,7 +104,7 @@
 			{/if}
 		</div>
 
-		{#if cardType == 'pack'}
+		{#if cardType == 'pack' && extraData.items.length !== 0}
 			<button
 				aria-label="crackers list"
 				title="Crackers list"
